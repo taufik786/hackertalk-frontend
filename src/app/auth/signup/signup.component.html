@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="main-div">
+    <div class="signup-page">
+      <h1 class="mb-5">Register</h1>
+      <form *ngIf="form" [formGroup]="signupForm" (ngSubmit)="createAccount()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" formControlName="name" class="form-control" placeholder="Enter your full name">
+          <div *ngIf="submitted && signupForm.get('name').errors">
+            <p class="errorMsg" *ngIf="signupForm.get('name').errors.required">Name is required.</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" formControlName="email" class="form-control" placeholder="Enter your email">
+          <div *ngIf="submitted && signupForm.get('email').errors">
+            <p class="errorMsg" *ngIf="signupForm.get('email').errors.required">Email is required.</p>
+            <p class="errorMsg" *ngIf="signupForm.get('email').errors.email">Email must be a valid email address</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" formControlName="password" class="form-control" placeholder="Enter your password">
+          <div *ngIf="submitted && signupForm.get('password').errors">
+            <p class="errorMsg" *ngIf="signupForm.get('password').errors.required">Password is required.</p>
+            <p class="errorMsg" *ngIf="signupForm.get('password').errors.minlength">Password should be six characters.</p>
+          </div>
+        </div>
+        <div style="position: relative;">
+          <button type="submit" class="btn btn-primary">Create Account</button>
+          <p class="already-ac">Already Have An Account ? <a class="login-here" routerLink="/auth/login">Login Here</a></p>
+        </div>
+      </form>
+
+      <!-- OTP SECTION -->
+      <div class="otp-section" *ngIf="!form">
+        <p>
+          <ngb-alert [dismissible]="false" type="success">
+            <strong>Success : </strong>OTP has been successfully sent your mail.
+          </ngb-alert>
+        </p>
+        <div class="mb-3 otp-div">
+          <div style="width: 90%;">
+            <label for="password" class="form-label">Enter OTP</label>
+            <input type="text" class="form-control" placeholder="Enter one time password">
+          </div>
+          <div>
+            <button class="btn btn-secondary" (click)="editEmail()">Edit</button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-success">Verify OTP</button>
+        </div>
+      </div>
+
+      <!-- SOCIAL LOGIN -->
+      <div class="social-login">
+        <hr class="mt-4">
+        <p class="or">Or</p>
+        <div>
+          <app-social-login></app-social-login>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.signup-page{
+  width: 50%;
+  margin: auto;
+  background-color: gainsboro;
+  box-shadow: 0px 7px 15px 5px #aaa6a6;
+  border-radius: 12px;
+  padding: 52px 70px;
+}
+// .main-div{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+// }
+.already-ac{
+  position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+}
+.login-here{
+  text-decoration: none;
+}
+.otp-div{
+  display: flex;
+  align-items: end;
+}
+.or{
+  background-color: white;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+  margin: auto;
+  position: relative;
+  top: -30px;
+}

@@ -1,0 +1,27 @@
+.social-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social-section img{
+  width: 40px;
+  margin-right: 8px;
+}
+.gmail,.facebook{
+  display: flex;
+  align-items: center;
+  background-color: #ccc8c7;
+  border-radius: 12px;
+  padding: 3px 19px;
+  cursor: pointer;
+}
+.social-section p {
+  margin: 0;
+  padding: 0;
+}
+.gmail:hover{
+  background-color: grey;
+}
+.facebook:hover{
+  background-color: rgb(103, 125, 248);
+}
