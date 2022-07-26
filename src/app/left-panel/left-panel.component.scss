@@ -1,0 +1,18 @@
+.left-panel{
+  width: 170px;
+  position: sticky;
+  top: 98px;
+}
+.nav-link{
+  padding-left: 8px;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav-link:hover{
+  background-color: ghostwhite;
+}
+.active{
+  background-color: gainsboro;
+  font-weight: bold;
+}

@@ -2,6 +2,11 @@
   <div class="main-div">
     <div class="signup-page">
       <h1 class="mb-5">Register</h1>
+      <p style="margin-top: -24px;" *ngIf="error">
+        <ngb-alert [dismissible]="false" type="{{errorType}}" [innerHTML]="alertMsg">
+          <!-- {{errorMsg}} -->
+        </ngb-alert>
+      </p>
       <form *ngIf="form" [formGroup]="signupForm" (ngSubmit)="createAccount()">
         <div class="mb-3">
           <label for="name" class="form-label">Your Name</label>
@@ -34,22 +39,19 @@
 
       <!-- OTP SECTION -->
       <div class="otp-section" *ngIf="!form">
-        <p>
-          <ngb-alert [dismissible]="false" type="success">
-            <strong>Success : </strong>OTP has been successfully sent your mail.
-          </ngb-alert>
-        </p>
         <div class="mb-3 otp-div">
           <div style="width: 90%;">
             <label for="password" class="form-label">Enter OTP</label>
-            <input type="text" class="form-control" placeholder="Enter one time password">
+            <input type="text" class="form-control" placeholder="Enter one time password" [(ngModel)]="otp">
           </div>
           <div>
             <button class="btn btn-secondary" (click)="editEmail()">Edit</button>
           </div>
         </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-success">Verify OTP</button>
+        <div class="mb-3" style="position: relative;">
+          <button type="submit" class="btn btn-success" (click)="verifyOTP()">Verify OTP</button>
+          <p class="timer" *ngIf="timer">{{timerAlert}}</p>
+          <p class="timer" style="cursor: pointer;" *ngIf="!timer" (click)="resendOTP()">Resend</p>
         </div>
       </div>
 

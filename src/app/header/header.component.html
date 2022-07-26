@@ -11,10 +11,11 @@
         </li> -->
           <input class="form-control search-box" type="search" placeholder="Search" aria-label="Search">
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" *ngIf="!loggedUser">
         <button class="btn btn-success" type="button" routerLink="/auth/login">Login</button>
         <button class="btn btn-primary ms-2" type="button" routerLink="/auth/signup">Sign Up</button>
       </form>
+      <button class="btn btn-danger ms-2" type="button" *ngIf="loggedUser" (click)="logout()">Logout</button>
     </div>
   </div>
 </nav>

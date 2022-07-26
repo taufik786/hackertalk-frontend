@@ -1,0 +1,38 @@
+.dashboard{
+  display: flex;
+  padding-top: 22px;
+}
+.top-ques{
+  min-height: 100vh;
+  border-left: 2px solid black;
+  width: 60%;
+}
+.heading-ques{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 12px;
+}
+.filter-div{
+  margin-top: 25px;
+}
+.filter-div a{
+  padding: 8px 18px;
+    border: 1px solid;
+}
+.ask-btn{
+  width: 130px;
+}
+.right-side{
+  text-align: right;
+}
+.question-section{
+  margin-top: 26px;
+}
+.all-ques{
+  display: flex;
+    flex-direction: row;
+    border-top: 1px solid;
+}
+.votes{
+  width: 222px;
+}
